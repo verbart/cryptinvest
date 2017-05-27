@@ -5,7 +5,7 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 
 
 module.exports = {
-    entry: './src/scripts/app.js',
+    entry: './src/app.js',
     output: {
         path: path.resolve(__dirname, 'public/js'),
         filename: 'bundle.js'
@@ -30,7 +30,7 @@ if (!isDevelopment) {
     module.exports.plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             beautify: false,
-            mangle: false,
+            mangle: true,
             compress: true,
             comments: false,
             drop_console: true,
