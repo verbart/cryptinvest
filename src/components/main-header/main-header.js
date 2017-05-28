@@ -8,7 +8,7 @@ $('.mainHeader__burgerButton').on('click', function toggle() {
   burger.toggleClass('mainHeader__burgerButton_active');
   target.toggleClass('mainHeader__navbar_active');
 });
-
-const getAdvice = $('.mainHeader__getAdvice');
-const position = (getAdvice.width() + getAdvice.height()) / 2;
-getAdvice.css('margin-top', -position + 'px');
+//
+// const getAdvice = $('.mainHeader__getAdvice');
+// const position = (getAdvice.width() + getAdvice.height()) / 2;
+// getAdvice.css('margin-top', -position + 'px');

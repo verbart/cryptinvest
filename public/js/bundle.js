@@ -86,10 +86,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   burger.toggleClass('mainHeader__burgerButton_active');
   target.toggleClass('mainHeader__navbar_active');
 });
-
-var getAdvice = (0, _jquery2.default)('.mainHeader__getAdvice');
-var position = (getAdvice.width() + getAdvice.height()) / 2;
-getAdvice.css('margin-top', -position + 'px');
+//
+// const getAdvice = $('.mainHeader__getAdvice');
+// const position = (getAdvice.width() + getAdvice.height()) / 2;
+// getAdvice.css('margin-top', -position + 'px');
 
 /***/ }),
 /* 1 */
