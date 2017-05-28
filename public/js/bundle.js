@@ -63,53 +63,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _jquery = __webpack_require__(2);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-(0, _jquery2.default)('.mainHeader__burgerButton').on('click', function toggle() {
-  var burger = (0, _jquery2.default)(this);
-  var target = (0, _jquery2.default)('.mainHeader__navbar');
-
-  burger.toggleClass('mainHeader__burgerButton_active');
-  target.toggleClass('mainHeader__navbar_active');
-});
-
-(0, _jquery2.default)(window).scroll(function () {
-  var sticky = (0, _jquery2.default)('.mainHeader');
-  var scroll = (0, _jquery2.default)(window).scrollTop();
-
-  if (scroll >= sticky.height()) sticky.addClass('mainHeader_fixed');else sticky.removeClass('mainHeader_fixed');
-});
-
-//
-// const getAdvice = $('.mainHeader__getAdvice');
-// const position = (getAdvice.width() + getAdvice.height()) / 2;
-// getAdvice.css('margin-top', -position + 'px');
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(0);
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10367,6 +10325,90 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _jquery2.default)('.mainHeader__burgerButton').on('click', function toggle() {
+  var burger = (0, _jquery2.default)(this);
+  var target = (0, _jquery2.default)('.mainHeader__navbar');
+
+  burger.toggleClass('mainHeader__burgerButton_active');
+  target.toggleClass('mainHeader__navbar_active');
+});
+
+(0, _jquery2.default)(window).scroll(function () {
+  var sticky = (0, _jquery2.default)('.mainHeader');
+  var scroll = (0, _jquery2.default)(window).scrollTop();
+
+  if (scroll >= sticky.height()) sticky.addClass('mainHeader_fixed');else sticky.removeClass('mainHeader_fixed');
+});
+
+//
+// const getAdvice = $('.mainHeader__getAdvice');
+// const position = (getAdvice.width() + getAdvice.height()) / 2;
+// getAdvice.css('margin-top', -position + 'px');
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _jquery2.default)('.navbar').on('click', '.navbar__link', function (e) {
+  e.preventDefault();
+
+  var anchor = (0, _jquery2.default)((0, _jquery2.default)(this).attr('href'));
+  var top = anchor.offset().top - (0, _jquery2.default)('.navbar').height() + 1;
+
+  (0, _jquery2.default)('body, html').animate({ scrollTop: top }, 1000);
+  (0, _jquery2.default)('.mainHeader__navbar_active').removeClass('mainHeader__navbar_active');
+});
+
+(0, _jquery2.default)(window).scroll(function () {
+  (0, _jquery2.default)('.navbar__link').each(function (index, link) {
+    var navbarLink = (0, _jquery2.default)(link);
+    var section = (0, _jquery2.default)(navbarLink.attr('href'));
+    if (section.length) {
+      var top = section.offset().top - (0, _jquery2.default)('.navbar').height() - 10;
+      var bottom = top + section.height();
+      var scroll = (0, _jquery2.default)(window).scrollTop();
+
+      if (scroll > top && scroll < bottom) {
+        (0, _jquery2.default)('.navbar__item_active').removeClass('navbar__item_active');
+        navbarLink.closest('.navbar__item').addClass('navbar__item_active');
+      }
+    }
+  });
+});
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(1);
+
+__webpack_require__(2);
 
 /***/ })
 /******/ ]);
