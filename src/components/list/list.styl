@@ -1,0 +1,19 @@
+.list
+  margin 0
+  padding 0
+  font-size 1.15rem
+  list-style none
+  li
+    position relative
+    margin-bottom 10px
+    padding-left 20px
+    &:before
+      content ''
+      position absolute
+      left 0
+      top .5rem
+      display block
+      width 10px
+      height @width
+      background color_red
+      border-radius 50%
