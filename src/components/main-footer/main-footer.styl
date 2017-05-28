@@ -1,0 +1,37 @@
+.mainFooter
+  padding-top 10px
+  padding-bottom 10px
+  background #000
+  color #fff
+  &__container
+    display flex
+    justify-content space-between
+    @media (max-width 768px)
+      flex-direction column
+  &__left, &__right
+    display flex
+    align-items center
+    @media (min-width 768px)
+      flex-direction column
+      align-items flex-start
+    @media (max-width 480px)
+      flex-direction column
+  &__right
+    @media (min-width 768px)
+      text-align right
+      align-items flex-end
+  &__policy, &__develop
+    @media (min-width 768px)
+      margin-top 10px
+    @media (max-width 768px)
+      margin-left 10px
+      margin-right 10px
+  &__policy
+    @media (max-width 768px)
+      margin-top 10px
+      margin-bottom 10px
+  &__develop
+    display flex
+    align-items center
+    a
+      margin-left 10px
