@@ -86,6 +86,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   burger.toggleClass('mainHeader__burgerButton_active');
   target.toggleClass('mainHeader__navbar_active');
 });
+
+(0, _jquery2.default)(window).scroll(function () {
+  var sticky = (0, _jquery2.default)('.mainHeader');
+  var scroll = (0, _jquery2.default)(window).scrollTop();
+
+  if (scroll >= sticky.height()) sticky.addClass('mainHeader_fixed');else sticky.removeClass('mainHeader_fixed');
+});
+
 //
 // const getAdvice = $('.mainHeader__getAdvice');
 // const position = (getAdvice.width() + getAdvice.height()) / 2;
