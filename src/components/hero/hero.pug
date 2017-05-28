@@ -2,3 +2,32 @@ section.hero
   include ../main-header/main-header
 
   .container
+    .row
+      .col-lg-7
+        .padding_bottom.hidden-md-down
+        h3.hero__header.hero__header_3 Инвестиции в криптовалюту #[span.text_highlight на международных] биржах
+        h1.hero__header.hero__header_1 Инвестируйте #[b правильно] и приумножайте Ваш капитал в любое время!
+        h2.hero__header.hero__header_2 Вкладывайте деньги в криптовалюту, и получайте прибыль #[span.text_highlight каждые 2 недели]
+      .col-lg-5.hidden-md-down
+        .row
+          .col-9.offset-3
+            img(src='images/photo-1.jpg')
+
+      .col-lg-10
+        h3.hero__header.hero__header_3 Заполните форму и узнайте, что делать с криптовалютой, чтобы Ваши деньги не лежали, а зарабатывали для Вас.
+
+    form.row.form.padding_top_half
+      .col-md-6.col-xl-3
+        .form__group.form__group_lg.margin_bottom_half
+          input.form__input(name='name' required placeholder='Имя')
+
+      .col-md-6.col-xl-3
+        .form__group.form__group_lg.margin_bottom_half
+          input.form__input(name='phone' required placeholder='Телефон')
+
+      .col-md-6.col-xl-3
+        .form__group.form__group_lg.margin_bottom_half
+          input.form__input(name='email' type='email' required placeholder='E-mail')
+
+      .col-md-6.col-xl-3
+        button.button.button_block.button_lg Получить консультацию

@@ -1,0 +1,45 @@
+.form
+  &__group
+    position relative
+    display flex
+    height 2rem
+    background #333
+    border-radius 1px
+    cursor pointer
+    &:before
+      content ''
+      position absolute
+      top 1px
+      right 1px
+      bottom 1px
+      left 1px
+      background #fff
+    &_lg
+      height 2.5rem
+    &_block
+      width 100%
+  &__input
+    position relative
+    width 100%
+    padding 0 8px
+    box-shadow none
+    outline none
+    color #333
+    font-size 1rem
+    border none
+    background none
+    overflow hidden
+    text-overflow ellipsis
+    white-space nowrap
+    cursor text
+    transition .2s
+    &::placeholder
+      text-align center
+      color #333
+      opacity 1
+  &__message
+    margin-top -15px
+    margin-bottom 15px
+    font-size .95rem
+    &_error
+      color #ea4b35
