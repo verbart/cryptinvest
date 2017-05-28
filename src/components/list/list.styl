@@ -17,19 +17,19 @@
       height @width
       background color_red
       border-radius 50%
-
   &_arrow
     li
-      position relative
-      margin-bottom 10px
-      padding-left 20px
+      padding-left 25px
       &:before
         content ''
         position absolute
         left 0
-        top .5rem
+        top .4rem
         display block
         width 15px
         height @width
-        transform r
-        background color_red
+        transform rotate(45deg)
+        border-right 3px solid color_red
+        border-top 3px solid color_red
+        background none
+        border-radius 0
