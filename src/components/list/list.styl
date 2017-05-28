@@ -17,3 +17,19 @@
       height @width
       background color_red
       border-radius 50%
+
+  &_arrow
+    li
+      position relative
+      margin-bottom 10px
+      padding-left 20px
+      &:before
+        content ''
+        position absolute
+        left 0
+        top .5rem
+        display block
+        width 15px
+        height @width
+        transform r
+        background color_red
