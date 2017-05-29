@@ -13,11 +13,17 @@ $('.callbackForm').submit(function (e) {
   e.preventDefault();
 
   const form = $(this);
+  const data = form.serializeArray();
+
+  data.push({
+    name: 'location',
+    value: location.href
+  });
 
   $.ajax({
     type: 'POST',
     url: './contact.php',
-    data: form.serialize()
+    data: data
   })
     .done(function () {
       toastr.success('Ваша заявка отправлена!');

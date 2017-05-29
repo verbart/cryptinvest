@@ -10375,26 +10375,34 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _jquery2.default)('.navbar').on('click', '.navbar__link', function (e) {
   e.preventDefault();
 
-  var anchor = (0, _jquery2.default)((0, _jquery2.default)(this).attr('href'));
-  var top = anchor.offset().top - (0, _jquery2.default)('.navbar').height() + 1;
+  var href = (0, _jquery2.default)(this).attr('href');
+  var target = (0, _jquery2.default)(href);
+  var top = target.offset().top - (0, _jquery2.default)('.navbar').height() + 1;
 
-  (0, _jquery2.default)('body, html').animate({ scrollTop: top }, 1000);
+  (0, _jquery2.default)('body, html').animate({ scrollTop: top }, 1000, function () {
+    history.pushState(null, null, '#' + href);
+  });
+
   (0, _jquery2.default)('.mainHeader__navbar_active').removeClass('mainHeader__navbar_active');
 });
 
-(0, _jquery2.default)(window).scroll(function () {
-  (0, _jquery2.default)('.navbar__link').each(function (index, link) {
-    var navbarLink = (0, _jquery2.default)(link);
-    var section = (0, _jquery2.default)(navbarLink.attr('href'));
-    if (section.length) {
-      var top = section.offset().top - (0, _jquery2.default)('.navbar').height() - 10;
-      var bottom = top + section.height();
-      var scroll = (0, _jquery2.default)(window).scrollTop();
+(0, _jquery2.default)(window).on('scroll', function () {
+  (0, _jquery2.default)('section').each(function () {
+    var section = (0, _jquery2.default)(this);
+    var sectionId = section.attr('id');
+    var navbarLink = (0, _jquery2.default)('.navbar__link[href="#' + sectionId + '"]');
 
-      if (scroll > top && scroll < bottom) {
-        (0, _jquery2.default)('.navbar__item_active').removeClass('navbar__item_active');
+    var top = section.offset().top - (0, _jquery2.default)('.navbar').height() - 100;
+    var bottom = top + section.height() - (0, _jquery2.default)('.navbar').height() - 100;
+    var scroll = (0, _jquery2.default)(window).scrollTop();
+
+    if (scroll > top && scroll < bottom) {
+      (0, _jquery2.default)('.navbar__item_active').removeClass('navbar__item_active');
+      if (navbarLink.length) {
         navbarLink.closest('.navbar__item').addClass('navbar__item_active');
       }
+
+      history.pushState(null, null, '#' + sectionId);
     }
   });
 });
@@ -14588,11 +14596,17 @@ $('.callbackForm').submit(function (e) {
   e.preventDefault();
 
   var form = $(this);
+  var data = form.serializeArray();
+
+  data.push({
+    name: 'location',
+    value: location.href
+  });
 
   $.ajax({
     type: 'POST',
     url: './contact.php',
-    data: form.serialize()
+    data: data
   }).done(function () {
     _toastr2.default.success('Ваша заявка отправлена!');
     form.trigger('reset');

@@ -28,6 +28,12 @@ html
     link(rel='shortcut icon' type='image/x-icon' href='/favicon.ico')
 
     link(rel='stylesheet' href='./css/style.css')
+    script.
+      window.REMODAL_GLOBALS = {
+        DEFAULTS: {
+          hashTracking: false
+        }
+      };
     script(defer src='./js/bundle.js')
 
     title Crypto Invest
@@ -86,3 +92,13 @@ html
       ga('create', 'UA-99980493-1', 'auto');
       ga('send', 'pageview');
     // Google end
+
+    script(data-skip-moving='true').
+      (function (w, d, u, b) {
+        s = d.createElement('script');
+        r = (Date.now() / 1000 | 0);
+        s.async = 1;
+        s.src = u + '?' + r;
+        h = d.getElementsByTagName('script')[0];
+        h.parentNode.insertBefore(s, h);
+      })(window, document, 'https://cdn.bitrix24.ru/b4351311/crm/site_button/loader_2_xocx77.js');
