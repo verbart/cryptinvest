@@ -1,2 +1,21 @@
 .testimonials
   background url(../images/bg-testimonials.jpg) center / cover
+  text-align center
+  //&__slide + &__slide
+  //  @media (max-width 992px)
+  //    border-left 1px solid #999
+  &__photo
+    display inline-block
+    width 120px
+    height @width
+    border-radius 50%
+    margin-bottom 1.25rem
+    background-position center
+    background-size cover
+  &__name
+    padding-bottom .8rem
+    font-size 1.6rem
+    font-weight 700
+  &__opinion
+    display inline-block
+    max-width 470px

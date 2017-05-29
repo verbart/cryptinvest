@@ -1,0 +1,21 @@
+@import '../../../../node_modules/slick-carousel/slick/slick.css'
+@import '../../../../node_modules/slick-carousel/slick/slick-theme.css'
+
+.slick
+  &-loading &-list
+    background #fff center center no-repeat
+  &-dots
+    bottom -50px
+    li
+      width 12px
+      height @width
+      border-radius 50%
+      background rgba(#616161, 50%)
+      &.slick-active
+        background #616161
+      button:before
+        content ''
+        font-family inherit
+
+.slick-dotted.slick-slider
+  margin-bottom 50px
