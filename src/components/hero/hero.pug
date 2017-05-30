@@ -17,17 +17,15 @@ section.hero(id='main')
         h3.hero__header.hero__header_3 Заполните форму и узнайте, что делать с криптовалютой, чтобы Ваши деньги не лежали, а зарабатывали для Вас.
 
     form.row.form.callbackForm.padding_top_half
-      .col-md-6.col-xl-3
-        .form__group.form__group_lg.margin_bottom_half
-          input.form__input(name='name' required placeholder='Имя')
+      .col-md-8.offset-md-2.col-lg-12.offset-lg-0
+        .row
+          .col-lg-4.col-xl-3
+            .form__group.form__group_lg.margin_bottom_half
+              input.form__input(name='name' required placeholder='Имя')
 
-      .col-md-6.col-xl-3
-        .form__group.form__group_lg.margin_bottom_half
-          input.form__input(name='phone' required placeholder='Телефон')
+          .col-lg-4.col-xl-3
+            .form__group.form__group_lg.margin_bottom_half
+              input.form__input(name='phone' required placeholder='Телефон')
 
-      .col-md-6.col-xl-3
-        .form__group.form__group_lg.margin_bottom_half
-          input.form__input(name='email' type='email' required placeholder='E-mail')
-
-      .col-md-6.col-xl-3
-        button.button.button_block.button_lg Получить консультацию
+          .col-lg-4.col-xl-3
+            button.button.button_block.button_lg Получить консультацию
