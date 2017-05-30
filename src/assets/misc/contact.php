@@ -2,8 +2,7 @@
 $c = true;
 
 $project_name = "CryptoInvest";
-//$admin_email  = "crypto@mobiagency.ru";
-$admin_email  = "wtf.noword@gmail.com";
+$admin_email  = "crypto@mobiagency.ru";
 $form_subject = "Новая заявка с сайта";
 
 $reply_to = $admin_email;
