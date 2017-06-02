@@ -1,21 +1,39 @@
 .testimonials
   background url(../images/bg-testimonials.jpg) center / cover
-  text-align center
-  //&__slide + &__slide
-  //  @media (max-width 992px)
-  //    border-left 1px solid #999
+  @media (max-width 992px)
+    text-align center
   &__photo
     display inline-block
-    width 120px
+    width 100%
     height @width
-    border-radius 50%
-    margin-bottom 1.25rem
+    min-width 200px
+    min-height @min-width
+    max-width 300px
+    max-height @max-width
     background-position center
     background-size cover
+    border 2px solid rgba(0, 0, 0, 0.3)
+    @media (max-width 992px)
+      width 200px
+      height @width
+      border-radius 50%
   &__name
     padding-bottom .8rem
     font-size 1.6rem
-    font-weight 700
+    font-weight 500
   &__opinion
     display inline-block
     max-width 640px
+    margin-top 0
+    margin-bottom 10px
+    @media (max-width 992px)
+      margin-top 1.25rem
+    &:before
+      content ''
+      display block
+      width 35px
+      height @width
+      margin-bottom 10px
+      background url('../images/svg/quote-left.svg') center / cover
+      @media (max-width 992px)
+        display none
