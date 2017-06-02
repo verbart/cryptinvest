@@ -58,3 +58,7 @@ $('.callbackForm').submit(function (e) {
 $(document).on('closed', '.remodal', function (e) {
   $('.remodal form').trigger('reset');
 });
+
+import './assets/scripts/yandex-metrika'
+import './assets/scripts/google-analytics'
+import './assets/scripts/bitrix24-form'

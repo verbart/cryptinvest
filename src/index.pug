@@ -48,75 +48,7 @@ html
     include components/modals/modals
 
     // Yandex.Metrika counter
-    script(type='text/javascript').
-      (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-          try {
-            w.yaCounter44804353 = new Ya.Metrika({
-              id:44804353,
-              clickmap:true,
-              trackLinks:true,
-              accurateTrackBounce:true,
-              webvisor:true
-            });
-          } catch(e) { }
-        });
-        var n = d.getElementsByTagName("script")[0],
-          s = d.createElement("script"),
-          f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/watch.js";
-        if (w.opera == "[object Opera]") {
-          d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-      })(document, window, "yandex_metrika_callbacks");
     noscript
       div
         img(src='https://mc.yandex.ru/watch/44804353' style='position:absolute; left:-9999px;' alt='')
     // /Yandex.Metrika counter
-
-    // Google start
-    script.
-      (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-          }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-          m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-      ga('create', 'UA-99980493-1', 'auto');
-      ga('send', 'pageview');
-    // Google end
-
-    script(data-skip-moving='true').
-      (function (w, d, u, b) {
-        s = d.createElement('script');
-        r = (Date.now() / 1000 | 0);
-        s.async = 1;
-        s.src = u + '?' + r;
-        h = d.getElementsByTagName('script')[0];
-        h.parentNode.insertBefore(s, h);
-      })(window, document, 'https://cdn.bitrix24.ru/b4351311/crm/site_button/loader_2_xocx77.js');
-
-    script.
-      (function (w, d, u, b) {
-        w['Bitrix24FormObject'] = b;
-        w[b] = w[b] || function () {
-            arguments[0].ref = u;
-            (w[b].forms = w[b].forms || []).push(arguments[0])
-          };
-        if (w[b]['forms']) return;
-        s = d.createElement('script');
-        r = 1 * new Date();
-        s.async = 1;
-        s.src = u + '?' + r;
-        h = d.getElementsByTagName('script')[0];
-        h.parentNode.insertBefore(s, h);
-      })(window, document, 'https://crypto-invest.bitrix24.ru/bitrix/js/crm/form_loader.js', 'b24form');
-
-      b24form({"id": "10", "lang": "ru", "sec": "0u0f9y", "type": "inline"});
