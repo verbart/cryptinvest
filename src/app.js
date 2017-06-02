@@ -20,17 +20,17 @@ $('.callbackForm').submit(function (e) {
   e.preventDefault();
 
   const form = $(this);
-  const data = form.serializeArray();
+  const data = form.serializeArray().reduce((result, item) => {
+    result[item.name] = item.value;
+    return result;
+  }, {});
 
-  data.push({
-    name: 'location',
-    value: location.href
-  });
+  data.site = 'crypto-invest.bitrix24.ru';
 
   $.ajax({
     type: 'POST',
-    url: './contact.php',
-    data: data
+    url: 'https://avarkom.pw/api/v2/feedback',
+    data: JSON.stringify(data)
   })
     .done(function () {
       $('[data-remodal-id]').remodal().close();
