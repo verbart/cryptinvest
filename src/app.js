@@ -25,7 +25,10 @@ $('.callbackForm').submit(function (e) {
     return result;
   }, {});
 
+  const modal = form.closest('[data-remodal-id]');
+
   data.site = 'crypto-invest.bitrix24.ru';
+  data.source = location.search;
 
   $.ajax({
     type: 'POST',
@@ -33,16 +36,18 @@ $('.callbackForm').submit(function (e) {
     data: JSON.stringify(data)
   })
     .done(function () {
-      $('[data-remodal-id]').remodal().close();
+      if (modal.length) {
+        modal.remodal().close();
+      }
       toastr.success('Ваша заявка отправлена!');
       form.trigger('reset');
 
       switch (form.attr('id')) {
         case 'start-investing':
-          fileDownload(location.origin+'/Cryptoinvest.pdf');
+          fileDownload(location.origin+'/Cryptoinvest.pdf', 'Cryptoinvest.pdf');
           break;
         case 'closed-chat':
-          fileDownload(location.origin+'/KP_Signaly.pdf');
+          fileDownload(location.origin+'/KP_Signaly.pdf', 'KP_Signaly.pdf');
       }
     })
     .fail(function() {
