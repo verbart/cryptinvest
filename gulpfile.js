@@ -69,33 +69,6 @@ gulp.task('scripts', function(done) {
   });
 });
 
-gulp.task('fonts', function () {
-  return gulp.src([
-    './src/assets/fonts/**/*.*'
-  ])
-    .pipe(gulp.dest('./public/fonts'));
-});
-
-gulp.task('sprite', function() {
-  const spriteData = gulp.src('./src/assets/images/sprite/*.{png,jpg,jpeg}')
-    .pipe(spritesmith({
-      imgName: 'sprite.png',
-      cssName: 'images.styl',
-      algorithm: 'binary-tree',
-      padding: 2,
-      cssTemplate: './src/assets/styles/sprites/sprite-template.mustache'
-    }));
-
-  spriteData.img
-    .pipe(buffer())
-    .pipe(gulpIf(!isDevelopment, tinypng()))
-    .pipe(gulp.dest('./public/images'));
-
-  spriteData.css.pipe(gulp.dest('./src/styles/sprites'));
-
-  return spriteData;
-});
-
 gulp.task('svgSymbols', function () {
   return gulp.src('./src/assets/images/svg/**/*.svg')
     .pipe(svgmin())
@@ -107,9 +80,9 @@ gulp.task('svgSymbols', function () {
 });
 
 gulp.task('images', function () {
-  return gulp.src(['./src/assets/images/**/*.*', '!./src/assets/images/sprite'])
+  return gulp.src(['./src/assets/images/**/*.*', '!./src/assets/images/svg/**/*.*'])
     .pipe(changed('./public/images'))
-    .pipe(gulpIf(!isDevelopment, gulpIf(['!*.svg'], tinypng())))
+    .pipe(gulpIf(!isDevelopment, tinypng()))
     .pipe(gulp.dest('./public/images'));
 });
 
@@ -124,7 +97,7 @@ gulp.task('watch', function () {
   gulp.watch('./src/**/*.js', gulp.series('scripts'));
   gulp.watch('./src/assets/misc/**/*.*', gulp.series('misc'));
   gulp.watch('./src/assets/images/svg/**/*.svg', gulp.series('svgSymbols'));
-  gulp.watch(['./src/assets/images/**/*.*', '!./src/assets/images/svg'], gulp.series('images'));
+  gulp.watch(['./src/assets/images/**/*.*', '!./src/assets/images/svg/**/*.*'], gulp.series('images'));
 });
 
 gulp.task('serve', function () {
@@ -145,15 +118,11 @@ gulp.task('clean', function () {
 
 gulp.task('build', gulp.series(
   'clean',
-  gulp.parallel(
-    'sprite',
-    'svgSymbols'
-  ),
+  'svgSymbols',
   gulp.parallel(
     'views',
     'styles',
     'scripts',
-    'fonts',
     'images',
     'misc'
   )));
