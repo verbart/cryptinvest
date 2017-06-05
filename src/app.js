@@ -2,11 +2,15 @@ const $ = window.$ = window.jQuery = require('jquery');
 import 'slick-carousel';
 import 'remodal';
 import toastr from 'toastr';
-toastr.options.closeButton = true;
+import AOS from 'aos';
 
 import './components/main-header/main-header';
 import './components/navbar/navbar';
 import './components/sections/testimonials/testimonials';
+
+
+toastr.options.closeButton = true;
+AOS.init();
 
 const fileDownload = function (url, name) {
   const link = document.createElement('a');
