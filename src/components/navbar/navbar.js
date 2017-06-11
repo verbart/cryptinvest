@@ -1,15 +1,25 @@
 import $ from 'jquery';
 
 
-$('a[href*=\\#]').click(function (e) {
+if (location.hash) {
+  console.log($('section'+location.hash));
+  const offset = $('section'+location.hash).offset();
+  const top = offset.top - $('.navbar').height();
+
+  $('html, body').animate({scrollTop: top}, 0);
+}
+
+$('a[href^="#"]').click(function (e) {
   e.preventDefault();
 
   const href = $(this).attr('href');
   const target = $(href);
   const top = target.offset().top - $('.navbar').height() + 1;
 
+  console.log(href);
+
   $('body, html').animate({scrollTop: top}, 1000, function () {
-    history.pushState(null, null, '#'+href);
+    history.pushState(null, null, href);
   });
 
   $('.mainHeader__navbar_active').removeClass('mainHeader__navbar_active');
