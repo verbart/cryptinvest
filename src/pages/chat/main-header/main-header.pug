@@ -1,0 +1,15 @@
+include /src/components/icon/icon
+
+header.mainHeader
+  .container.mainHeader__container
+    .mainHeader__logo
+      include ../../../components/logo/logo
+
+    .mainHeader__getAdvice
+      button.button(data-remodal-target='callback') Получить консультацию
+
+    .mainHeader__navbar
+      include ../navbar/navbar
+
+    button.mainHeader__burgerButton
+      +icon({icon: 'menu'})

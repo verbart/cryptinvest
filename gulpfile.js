@@ -22,7 +22,7 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 
 
 gulp.task('views', function () {
-  return gulp.src('./src/index.pug')
+  return gulp.src('./src/pages/**/index.pug')
     .pipe(pug({
       basedir: './'
     }))

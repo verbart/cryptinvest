@@ -4,9 +4,9 @@ import 'remodal';
 import toastr from 'toastr';
 import AOS from 'aos';
 
-import './components/main-header/main-header';
+import './pages/main/main-header/main-header';
 import './components/navbar/navbar';
-import './components/sections/testimonials/testimonials';
+import './components/testimonials/testimonials';
 
 
 toastr.options.closeButton = true;

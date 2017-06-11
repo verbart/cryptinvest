@@ -1,6 +1,7 @@
 import $ from 'jquery';
 
-$('.navbar').on('click', '.navbar__link', function (e) {
+
+$('a[href*=\\#]').click(function (e) {
   e.preventDefault();
 
   const href = $(this).attr('href');

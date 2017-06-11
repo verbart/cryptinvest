@@ -1,0 +1,24 @@
+.faq
+  + .faq
+    margin-top 25px
+  &__header
+    position relative
+    padding-bottom 10px
+    padding-left 25px
+    font-weight 700
+    font-size 1.15rem
+    &:before
+      content ''
+      position absolute
+      left 0
+      top .5rem
+      display block
+      width 15px
+      height @width
+      transform rotate(45deg)
+      border-right 3px solid color_red
+      border-top 3px solid color_red
+      background none
+      border-radius 0
+  &__description
+    margin 0

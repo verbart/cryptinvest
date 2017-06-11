@@ -1,0 +1,33 @@
+.price
+  padding 15px
+  border 1px solid #000
+  text-align center
+  @media (min-width 1200px)
+    margin-left 30px
+    margin-right 30px
+  &__header
+    position relative
+    margin-bottom 1.5rem
+    padding-bottom .5rem
+    text-align center
+    font-size 1.65rem
+    font-weight 700
+    &:after
+      content ''
+      position absolute
+      bottom 0
+      left 50%
+      width 100px
+      margin-left -(@width / 2)
+      height 3px
+      background color_red
+  &__price
+    font-size 1.35rem
+  &__profit
+    margin-bottom 1.5rem
+    color color_red
+    font-size 1.35rem
+    font-weight 700
+  &__period
+    margin-bottom 1rem
+    font-size 1.15rem
