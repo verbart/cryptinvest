@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 
 if (location.hash) {
-  console.log($('section'+location.hash));
+  // console.log($('section'+location.hash));
   const offset = $('section'+location.hash).offset();
   const top = offset.top - $('.navbar').height();
 

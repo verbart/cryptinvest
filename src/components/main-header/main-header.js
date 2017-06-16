@@ -9,7 +9,7 @@ $('.mainHeader__burgerButton').on('click', function toggle() {
   target.toggleClass('mainHeader__navbar_active');
 });
 
-$(window).scroll(function(){
+$(window).scroll(function () {
   const sticky = $('.mainHeader');
   const scroll = $(window).scrollTop();
 
@@ -17,7 +17,7 @@ $(window).scroll(function(){
   else sticky.removeClass('mainHeader_fixed');
 });
 
-//
+
 // const getAdvice = $('.mainHeader__getAdvice');
 // const position = (getAdvice.width() + getAdvice.height()) / 2;
 // getAdvice.css('margin-top', -position + 'px');

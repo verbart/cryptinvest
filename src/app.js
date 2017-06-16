@@ -4,13 +4,19 @@ import 'remodal';
 import toastr from 'toastr';
 import AOS from 'aos';
 
-import './pages/main/main-header/main-header';
+import './components/main-header/main-header';
 import './components/navbar/navbar';
 import './components/testimonials/testimonials';
+import './pages/chat/sections/videos/videos';
 
 
 toastr.options.closeButton = true;
+
 AOS.init();
+
+$('[data-remodal-id]').remodal({
+  hashTracking: false
+});
 
 const fileDownload = function (url, name) {
   const link = document.createElement('a');
