@@ -8,23 +8,26 @@ section.padding_top_half(id='connect')
           h3.connect__header Первый месяц
           h4.connect__price $500
           p.connect__description Вы забираете 100% прибыли
-          button.button.button_lg.button_long Подписаться
-
-    .row
-      .col-md-6.col-lg-4.margin_bottom_half
-        .connect
-          .connetct__image
-            img(src='/images/like.png' height='80')
-          h3.connect__header Второй месяц
           p.connect__description Второй и последующие
             br
             | месяцы - 200$
-            br
-            | Вы забираете 100% прибыли
+          button.button.button_lg.button_long(data-remodal-target='closed-chat-subscription') Подписаться
 
-          button.button.button_long Подписаться
+    .row
+      //.col-md-6.col-lg-4.margin_bottom_half
+      //  .connect
+      //    .connetct__image
+      //      img(src='/images/like.png' height='80')
+      //    h3.connect__header Второй месяц
+      //    p.connect__description Второй и последующие
+      //      br
+      //      | месяцы - 200$
+      //      br
+      //      | Вы забираете 100% прибыли
+      //
+      //    button.button.button_long Подписаться
 
-      .col-md-6.col-lg-4.margin_bottom_half
+      .col-md-6.col-lg-4.offset-lg-2.margin_bottom_half
         .connect
           .connetct__image
             img(src='/images/chat.png' height='80')
@@ -35,7 +38,7 @@ section.padding_top_half(id='connect')
             br
             | общения с инвесторами
 
-          button.button.button_long Зайти в чат
+          button.button.button_long(data-remodal-target='closed-chat-bonuses') Зайти в чат
 
       .col-md-6.col-lg-4.margin_bottom_half
         .connect
@@ -48,7 +51,7 @@ section.padding_top_half(id='connect')
             br
             | получите скидку 10%
 
-          button.button.button_long Получить скидку
+          button.button.button_long(data-remodal-target='closed-chat-share') Получить скидку
 
 
     .padding_top

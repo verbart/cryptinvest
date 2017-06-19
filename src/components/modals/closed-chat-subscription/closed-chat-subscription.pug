@@ -1,0 +1,20 @@
+.remodal.remodal_sm(data-remodal-id='closed-chat-subscription')
+  button.remodal-close(data-remodal-action='close')
+  h1
+    include ../../logo/logo
+  p Заполните форму ниже и наш менеджер перезвонит Вам
+
+  .remodal__body
+    form.row.form.callbackForm.padding_top_half(id='closed-chat')
+      input(type='hidden' name='title' value='Запрос на консультацию по закрытому чату - подписка')
+
+      .col-12
+        .form__group.form__group_lg.margin_bottom_half
+          input.form__input(name='name' required placeholder='Имя')
+
+      .col-12
+        .form__group.form__group_lg.margin_bottom_half
+          input.form__input(name='phone' required placeholder='Телефон')
+
+      .col-12
+        button.button.button_block.button_lg Получить консультацию

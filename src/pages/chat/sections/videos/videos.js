@@ -26,9 +26,16 @@ function toggleVideo(e, play) {
 }
 
 $(document).on('opened', '.remodal', function(e) {
-  setTimeout(() => toggleVideo(e, true), 500);
+  if ($(e.target).hasClass('videoModal')) {
+    console.log(1111111111111);
+    setTimeout(() => toggleVideo(e, true), 500);
+  }
 });
 
 $(document).on('closing', '.remodal', function(e) {
-  toggleVideo(e);
+  if ($(e.target).hasClass('videoModal')) {
+    console.log(22222222222222);
+
+    toggleVideo(e);
+  }
 });
