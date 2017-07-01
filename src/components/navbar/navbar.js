@@ -2,11 +2,14 @@ import $ from 'jquery';
 
 
 if (location.hash) {
-  // console.log($('section'+location.hash));
-  const offset = $('section'+location.hash).offset();
-  const top = offset.top - $('.navbar').height();
+  const section = $('section'+location.hash);
 
-  $('html, body').animate({scrollTop: top}, 0);
+  if (section.length) {
+    const offset = $('section'+location.hash).offset();
+    const top = offset.top - $('.navbar').height();
+
+    $('html, body').animate({scrollTop: top}, 0);
+  }
 }
 
 $('a[href^="#"]').click(function (e) {
@@ -15,8 +18,6 @@ $('a[href^="#"]').click(function (e) {
   const href = $(this).attr('href');
   const target = $(href);
   const top = target.offset().top - $('.navbar').height() + 1;
-
-  console.log(href);
 
   $('body, html').animate({scrollTop: top}, 1000, function () {
     history.pushState(null, null, href);

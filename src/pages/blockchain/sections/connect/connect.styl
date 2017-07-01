@@ -1,0 +1,40 @@
+.connect
+  padding 15px
+  text-align center
+  &__header
+    position relative
+    margin-top 1rem
+    margin-bottom .5rem
+    padding-bottom .5rem
+    text-align center
+    font-size 1.35rem
+    font-weight 700
+  &__description
+    margin-top .5rem
+    margin-bottom 1rem
+    line-height 1.2
+    font-weight 500
+  &_first
+    border 1px solid #000
+    .connect__header
+      margin-bottom 1rem
+      &:after
+        content ''
+        position absolute
+        bottom 0
+        left 50%
+        width 100px
+        margin-left -(@width / 2)
+        height 3px
+        background color_red
+    .connect__price
+      margin 0
+      padding 0
+      color color_red
+      font-size 1.3rem
+      font-weight 700
+    .connect__description
+      margin-top .55rem
+      margin-bottom .65rem
+      font-size 1.05rem
+      font-weight 500
