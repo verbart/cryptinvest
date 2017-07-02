@@ -1,0 +1,29 @@
+.teamMember
+  padding-top 15px
+  padding-bottom 15px
+  &__container
+    display flex
+    justify-content space-around
+    flex-wrap wrap
+    //@media (max-width 420px)
+    //  display block
+  &__photo
+    width 240px
+    height @width
+    background-size cover
+    background-position center
+    @media (max-width 1200px)
+      width 200px
+      height @width
+    //@media (max-width 420px)
+    //  width auto
+    //  height auto
+    //  padding-bottom 100%
+  &__name
+    margin 8px 0 0
+    padding 0
+    font-size 1.15rem
+    font-weight 500
+  &__position
+    margin 0
+    padding 0
