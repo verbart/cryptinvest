@@ -1,0 +1,66 @@
+.bonuses
+  padding 15px
+  text-align center
+  &__image
+    margin-bottom 1rem
+  &__description
+    margin-top .5rem
+    margin-bottom 1rem
+    line-height 1.2
+    font-weight 500
+
+.bonusesConnect
+  padding 15px
+  text-align center
+  border 1px solid #000
+  &__header
+    position relative
+    margin-top 0
+    margin-bottom .5rem
+    padding-bottom .5rem
+    text-align center
+    font-size 1.45rem
+    font-weight 700
+    &:after
+      content ''
+      position absolute
+      bottom 0
+      left 50%
+      width 100px
+      margin-left -(@width / 2)
+      height 3px
+      background color_red
+  &__price
+    position relative
+    display inline-flex
+    align-items center
+    margin 5px
+    padding 5px
+    line-height 1
+    font-weight 700
+    svg
+      height 1em
+      width 1em
+    &_old
+      font-size 1.25rem
+      color #7c7c7c
+      &:before
+        content ''
+        display block
+        position absolute
+        top 50%
+        left 0
+        right 0
+        height 2px
+        transform translateY(-50%)
+        background #7c7c7c
+    &_new
+      color color_red
+      font-size 1.5rem
+  &__description
+    margin 0
+    line-height 1.25
+    font-size 1.05rem
+    font-weight 500
+    &_main
+      font-size 1.25rem

@@ -1,0 +1,51 @@
+include /src/components/icon/icon
+
+section.padding_top_half(id='bonuses')
+  .container
+    .row
+      .col-sm-10.col-md-8.offset-sm-1.offset-md-2.margin_bottom
+        .bonusesConnect
+          h3.bonusesConnect__header Стоимость пакета
+          .bonusesConnect__price.bonusesConnect__price_old 200
+            +icon({icon: 'btc', width: 16, height: 16})
+          .bonusesConnect__price.bonusesConnect__price_new 50
+            +icon({icon: 'btc', width: 20, height: 20})
+          p.bonusesConnect__description.bonusesConnect__description_main IR на этапе пресейла
+          p.bonusesConnect__description Мы сами покупаем токены наиболее привлекательных для нас проектов.
+
+          .padding_top
+            button.button.button_lg.button_long(data-remodal-target='blockchain-order') Заказать
+
+    .sectionHeader(data-aos='fade-up')
+      h2.sectionHeader__caption Кто выиграет
+      .sectionHeader__description Какие проекты получат наибольшее преимущество &nbsp;
+        br.hidden-sm-down
+        | от покупки коробочного решения ICOBox
+
+    .row
+      .col-md-10.offset-md-1
+        .row
+          .col-sm-6.col-md-4.margin_bottom_half
+            .bonuses
+              .bonuses__image
+                img(src='/images/thumbs/like.png' height='80')
+              p.bonuses__description Понятная бизнес-модель
+                br
+                | или готовый бизнес
+
+          .col-sm-6.col-md-4.margin_bottom_half
+            .bonuses
+              .bonuses__image
+                img(src='/images/thumbs/list.png' height='80')
+              p.bonuses__description Наличие ресурсов (штатных или внешних) для реализации маркетинга, юридической разработки и веб-разработки
+
+          .col-sm-6.col-md-4.margin_bottom_half
+            .bonuses
+              .bonuses__image
+                img(src='/images/thumbs/check--1-.png' height='80')
+              p.bonuses__description Понимание основ
+                br
+                | блокчейна
+
+    .padding_top
+      hr
