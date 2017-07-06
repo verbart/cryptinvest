@@ -5,7 +5,7 @@ import toastr from 'toastr';
 import AOS from 'aos';
 
 import './components/main-header/main-header';
-import './components/navbar/navbar';
+// import './components/navbar/navbar';
 import './components/testimonials/testimonials';
 import './pages/chat/sections/videos/videos';
 
@@ -37,7 +37,7 @@ $('.callbackForm').submit(function (e) {
 
   const modal = form.closest('[data-remodal-id]');
 
-  data.site = 'crypto-invest.bitrix24.ru';
+  data.site = 'crypt-invest.bitrix24.ru';
   data.source = location.search;
 
   $.ajax({
@@ -52,13 +52,13 @@ $('.callbackForm').submit(function (e) {
       toastr.success('Ваша заявка отправлена!');
       form.trigger('reset');
 
-      switch (form.attr('id')) {
-        case 'start-investing':
-          fileDownload(location.origin+'/Cryptoinvest.pdf', 'Cryptoinvest.pdf');
-          break;
-        case 'closed-chat':
-          fileDownload(location.origin+'/KP_Signaly.pdf', 'KP_Signaly.pdf');
-      }
+      // switch (form.attr('id')) {
+      //   case 'start-investing':
+      //     fileDownload(location.origin+'/Cryptinvest.pdf', 'Cryptinvest.pdf');
+      //     break;
+      //   case 'closed-chat':
+      //     fileDownload(location.origin+'/KP_Signaly.pdf', 'KP_Signaly.pdf');
+      // }
     })
     .fail(function() {
       toastr.error('Произошла ошибка! Пожалуйста, сообщите нам о ней');

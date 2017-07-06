@@ -1,7 +1,7 @@
 <?php
 $c = true;
 
-$project_name = "CryptoInvest";
+$project_name = "CryptInvest";
 $admin_email  = "crypto@mobiagency.ru";
 $form_subject = "Новая заявка с сайта";
 

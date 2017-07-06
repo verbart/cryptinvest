@@ -17,6 +17,8 @@ const webpack = require('webpack');
 const changed = require('gulp-changed');
 const svgSymbols = require('gulp-svg-symbols');
 const svgmin = require('gulp-svgmin');
+const rev = require('gulp-rev');
+const revCollector = require('gulp-rev-collector');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -51,7 +53,10 @@ gulp.task('styles', function () {
     .pipe(gulpIf(isDevelopment, sourcemaps.write()))
     .pipe(gulpIf(!isDevelopment, cleanCSS()))
     .pipe(rename('style.css'))
+    .pipe(gulpIf(!isDevelopment, rev()))
     .pipe(gulp.dest('./public/css'))
+    .pipe(gulpIf(!isDevelopment, rev.manifest()))
+    .pipe(gulp.dest('./public'))
 });
 
 gulp.task('scripts', function(done) {
@@ -91,6 +96,20 @@ gulp.task('misc', function () {
     .pipe(gulp.dest('./public'));
 });
 
+gulp.task('revision', function (cb) {
+  if (isDevelopment) return cb();
+
+  gulp.src(['./public/rev-manifest.json', './public/**/*.html'])
+    .pipe(revCollector({
+      replaceReved: true
+    }))
+    .pipe(gulp.dest('./public'));
+
+  del('./public/rev-manifest.json');
+
+  return cb();
+});
+
 gulp.task('watch', function () {
   gulp.watch('./src/**/*.pug', gulp.series('views'));
   gulp.watch('./src/**/*.{css,styl}', gulp.series('styles'));
@@ -120,12 +139,14 @@ gulp.task('build', gulp.series(
   'clean',
   'svgSymbols',
   gulp.parallel(
+    'images',
     'views',
     'styles',
     'scripts',
-    'images',
     'misc'
-  )));
+  ),
+  'revision'
+));
 
 gulp.task('default', gulp.series(
   'build',

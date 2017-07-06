@@ -1,15 +1,15 @@
 {
-  "name": "crypto-invest",
+  "name": "crypt-invest",
   "description": "Promo website for investing in crypto currency",
   "version": "0.1.0",
   "author": "Artem Verbat",
-  "homepage": "https://github.com/verbart/crypto-invest#readme",
+  "homepage": "https://github.com/verbart/crypt-invest#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/verbart/crypto-invest.git"
+    "url": "git+https://github.com/verbart/crypt-invest.git"
   },
   "bugs": {
-    "url": "https://github.com/verbart/crypto-invest/issues"
+    "url": "https://github.com/verbart/crypt-invest/issues"
   },
   "scripts": {
     "start": "gulp",
@@ -29,6 +29,7 @@
     "gulp-postcss": "^6.2.0",
     "gulp-pug": "^3.1.0",
     "gulp-rename": "^1.2.2",
+    "gulp-rev": "^7.1.2",
     "gulp-sourcemaps": "^1.9.1",
     "gulp-stylus": "^2.6.0",
     "gulp-svg-symbols": "^2.0.2",
@@ -41,6 +42,7 @@
   },
   "dependencies": {
     "aos": "^2.1.1",
+    "gulp-rev-collector": "^1.2.2",
     "jquery": "^3.2.1",
     "remodal": "^1.1.1",
     "slick-carousel": "^1.6.0",
