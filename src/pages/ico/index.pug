@@ -1,5 +1,11 @@
 extends ../../layouts/default
 
+block prepend head
+  prepend head
+  - var description = 'Запусти свой проект и собери инвестиции с помощью ICO';
+  - var og_image = 'http://crypto-invest.site/images/preview-ico.png';
+  - var title = '';
+
 block content
   .page_ico
     include hero/hero

@@ -1,5 +1,11 @@
 extends ../../layouts/default
 
+block prepend head
+  prepend head
+  - var description = 'Получай сигналы на покупку криптовалют';
+  - var og_image = 'http://crypto-invest.site/images/preview-chat.png';
+  - var title = '';
+
 block content
   .page_chat
     include hero/hero

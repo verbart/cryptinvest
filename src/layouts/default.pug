@@ -3,7 +3,7 @@ html
   head
     block head
       meta(charset='UTF-8')
-      meta(name='description' content='Инвестиции в криптовалюту на международных биржах')
+      meta(name='description' content=description || 'Инвестиции в криптовалюту на международных биржах')
       meta(name='keywords' content='CryptInvest, биткоин, инвестиции, валюта')
       meta(http-equiv='X-UA-Compatible' content='IE=edge')
       meta(name='viewport' content='width=device-width, initial-scale=1')
@@ -13,7 +13,7 @@ html
 
       meta(property='og:type' content='website')
       meta(property='og:url' content='http://crypt-invest.site')
-      meta(property='og:image' content='http://crypt-invest.site/images/preview.png')
+      meta(property='og:image' content=og_image || 'http://crypto-invest.site/images/preview.png')
 
       link(rel='manifest' href='./manifest.json')
       link(rel='apple-touch-icon' sizes='57x57' href='/images/app-icon/apple-icon-57x57.png')
@@ -36,7 +36,7 @@ html
 
       script(defer src='/js/bundle.js')
 
-      title CryptInvest — надежный партнер по инвестициям в Биткоин и другие валюты
+      title #{title || 'CryptInvest — надежный партнер по инвестициям в Биткоин и другие валюты'}
 
   body.page
     block content
