@@ -1,15 +1,15 @@
 {
-  "name": "crypt-invest",
+  "name": "cryptinvest",
   "description": "Promo website for investing in crypto currency",
   "version": "0.1.0",
   "author": "Artem Verbat",
-  "homepage": "https://github.com/verbart/crypt-invest#readme",
+  "homepage": "https://github.com/verbart/cryptinvest#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/verbart/crypt-invest.git"
+    "url": "git+https://github.com/verbart/cryptinvest.git"
   },
   "bugs": {
-    "url": "https://github.com/verbart/crypt-invest/issues"
+    "url": "https://github.com/verbart/cryptinvest/issues"
   },
   "scripts": {
     "start": "gulp",

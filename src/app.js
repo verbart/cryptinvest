@@ -8,6 +8,8 @@ import './components/main-header/main-header';
 // import './components/navbar/navbar';
 import './components/testimonials/testimonials';
 import './pages/chat/sections/videos/videos';
+import './assets/scripts/file-download';
+import './assets/scripts/form';
 
 
 toastr.options.closeButton = true;
@@ -16,53 +18,6 @@ AOS.init();
 
 $('[data-remodal-id]').remodal({
   hashTracking: false
-});
-
-const fileDownload = function (url, name) {
-  const link = document.createElement('a');
-  link.href = url;
-  link.target = '_blank';
-  link.download = name;
-  link.dispatchEvent(new MouseEvent('click'));
-};
-
-$('.callbackForm').submit(function (e) {
-  e.preventDefault();
-
-  const form = $(this);
-  const data = form.serializeArray().reduce((result, item) => {
-    result[item.name] = item.value;
-    return result;
-  }, {});
-
-  const modal = form.closest('[data-remodal-id]');
-
-  data.site = 'crypt-invest.bitrix24.ru';
-  data.source = location.search;
-
-  $.ajax({
-    type: 'POST',
-    url: 'https://avarkom.pw/api/v2/feedback',
-    data: JSON.stringify(data)
-  })
-    .done(function () {
-      if (modal.length) {
-        modal.remodal().close();
-      }
-      toastr.success('Ваша заявка отправлена!');
-      form.trigger('reset');
-
-      // switch (form.attr('id')) {
-      //   case 'start-investing':
-      //     fileDownload(location.origin+'/Cryptinvest.pdf', 'Cryptinvest.pdf');
-      //     break;
-      //   case 'closed-chat':
-      //     fileDownload(location.origin+'/KP_Signaly.pdf', 'KP_Signaly.pdf');
-      // }
-    })
-    .fail(function() {
-      toastr.error('Произошла ошибка! Пожалуйста, сообщите нам о ней');
-    });
 });
 
 $(document).on('closed', '.remodal', function (e) {
