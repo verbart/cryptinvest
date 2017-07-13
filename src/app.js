@@ -1,7 +1,7 @@
 const $ = window.$ = window.jQuery = require('jquery');
 import 'slick-carousel';
 import 'remodal';
-import toastr from 'toastr';
+const toastr = window.toastr = require('toastr');
 import AOS from 'aos';
 
 import './components/main-header/main-header';

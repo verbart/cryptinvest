@@ -5,16 +5,30 @@ section.padding_top_half.padding_bottom.text_center(id='contact')
 
     h3.text_center Введите свой e-mail в форме ниже, и мы отправим видеозапись вам на почту
 
-    span.padding_top_half(style='display: inline-block;')
-      script(src='//static.mailerlite.com/data/webforms/488069/k5y1y0.js?v4')
-    //form.row.form.callbackForm
-    //  input(type='hidden' name='title' value='Запрос на видео из нижнего блока страницы встреч по четвергам')
-    //
-    //  .col-sm-10.offset-sm-1.col-lg-8.offset-lg-2.col-xl-6.offset-xl-3
-    //    .row
-    //      .col-md-6
-    //        .form__group.form__group_lg.margin_bottom_half
-    //          input.form__input(type='email' name='email' required placeholder='E-mail')
-    //
-    //      .col-md-6
-    //        button.button.button_block.button_lg Получить консультацию
+    #mlb2-5553273.ml-subscribe-form.ml-subscribe-form-5553273
+      form.row.padding_top_half.ml-block-form(
+        action='//app.mailerlite.com/webforms/submit/k5y1y0'
+        data-id='488069'
+        data-code='k5y1y0'
+        method='POST'
+        target='_blank'
+      )
+        input(type='hidden', name='ml-submit', value='1')
+
+        .col-sm-10.offset-sm-1.col-lg-8.offset-lg-2.col-xl-6.offset-xl-3
+          .row
+            .col-md-6
+              .form__group.form__group_lg.margin_bottom_half.form-group.ml-field-email.ml-validate-required.ml-validate-email
+                input.form__input.form-control(type='email' name='fields[email]' required placeholder='E-mail')
+            .col-md-6
+              button.button.button_block.button_lg Получить видео
+
+        script.
+          function ml_webform_success_5553273() {
+            var $ = ml_jQuery || jQuery;
+            var form = $('#mlb2-5553273 form');
+
+            form.trigger('reset');
+            toastr.success('Перейдите на Ваш почтовый ящик и начните просмотр видео!');
+          };
+      script(src='//static.mailerlite.com/js/w/webforms.min.js?v3772b61f1ec61c541c401d4eadfdd02f')
