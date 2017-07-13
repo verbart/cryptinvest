@@ -91,6 +91,11 @@ gulp.task('images', function () {
     .pipe(gulp.dest('./public/images'));
 });
 
+gulp.task('fonts', function () {
+  return gulp.src('./src/assets/fonts/**/*.*')
+    .pipe(gulp.dest('./public/fonts'));
+});
+
 gulp.task('misc', function () {
   return gulp.src('./src/assets/misc/**/*.*')
     .pipe(gulp.dest('./public'));
@@ -143,6 +148,7 @@ gulp.task('build', gulp.series(
     'views',
     'styles',
     'scripts',
+    'fonts',
     'misc'
   ),
   'revision'
