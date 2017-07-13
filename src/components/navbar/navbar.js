@@ -17,8 +17,8 @@ $('a[href^="#"]').click(function (e) {
 
   const href = $(this).attr('href');
   const target = $(href);
-  const top = target.offset().top - ($('.navbar').length ? $('.navbar').height() + 1: 0);
-
+  const navbarHeight = $('.navbar').length ? $('.navbar').height() : 0;
+  const top = target.offset().top - navbarHeight;
 
   $('body, html').animate({scrollTop: top}, 1000, function () {
     history.pushState(null, null, href);
@@ -32,9 +32,10 @@ $(window).on('scroll', function() {
     const section = $(this);
     const sectionId = section.attr('id');
     // const navbarLink = $('.navbar__link[href="#'+sectionId+'"]');
+    const navbarHeight = $('.navbar').length ? $('.navbar').height() : 0;
 
-    const top = section.offset().top - $('.navbar').height() - 100;
-    const bottom = top + section.height() - $('.navbar').height() - 100;
+    const top = section.offset().top - navbarHeight - 100;
+    const bottom = top + section.height() - navbarHeight - 100;
     const scroll = $(window).scrollTop();
 
     if (scroll > top && scroll < bottom) {
