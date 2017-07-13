@@ -5,7 +5,7 @@ import toastr from 'toastr';
 import AOS from 'aos';
 
 import './components/main-header/main-header';
-// import './components/navbar/navbar';
+import './components/navbar/navbar';
 import './components/testimonials/testimonials';
 import './pages/chat/sections/videos/videos';
 import './assets/scripts/file-download';
