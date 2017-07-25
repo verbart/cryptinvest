@@ -26,4 +26,4 @@ $(document).on('closed', '.remodal', function (e) {
 
 import './assets/scripts/yandex-metrika'
 import './assets/scripts/google-analytics'
-import './assets/scripts/bitrix24-form'
+import './assets/scripts/chatra'
