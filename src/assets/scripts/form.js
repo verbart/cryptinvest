@@ -15,7 +15,7 @@ $('.callbackForm').submit(function (e) {
 
   const modal = form.closest('[data-remodal-id]');
 
-  data.site = 'crypto-invest.bitrix24.ru';
+  data.site = 'crypto-invest.biz.bitrix24.ru';
   data.source = location.search;
 
   $.ajax({
@@ -31,12 +31,12 @@ $('.callbackForm').submit(function (e) {
       form.trigger('reset');
 
       if (location.href.indexOf(location.origin + '/ico') !== -1) {
-        fileDownload(location.origin+'/cryptinvest_ico.pdf', 'cryptinvest_ico.pdf');
+        fileDownload(location.origin+'/cryptinvest.biz_ico.pdf', 'cryptinvest.biz_ico.pdf');
       }
 
       // switch (form.attr('id')) {
       //   case 'start-investing':
-      //     fileDownload(location.origin+'/Cryptinvest.pdf', 'Cryptinvest.pdf');
+      //     fileDownload(location.origin+'/Cryptinvest.biz.pdf', 'Cryptinvest.biz.pdf');
       //     break;
       //   case 'closed-chat':
       //     fileDownload(location.origin+'/KP_Signaly.pdf', 'KP_Signaly.pdf');

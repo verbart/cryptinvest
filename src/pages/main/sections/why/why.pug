@@ -1,36 +1,39 @@
 section.padding_top_half(id='why')
   .container
     .sectionHeader(data-aos='fade-up')
-      h2.sectionHeader__caption Почему о заработке на криптовалюте
-        = ' '
-        br.hidden-sm-down
-        | заговорят завтра
+      h2.sectionHeader__caption Почему стоит просмотреть этот курс
 
     .row
       .col-md-4
-        .economyCollapse
-          h3.economyCollapse__header Мало
+        .thumb.thumb_preview
+          .thumb__image
+            img(src='/images/thumbs/list_black.png' height='70')
+          h3.thumb__header Мало
             = ' '
             br.hidden-sm-down
             | информации
-          p.economyCollapse__description В интернете есть масса статей про крпитовалюту, но пока практически никто не пишет, как зарабатывать с помощью этого инструмента.
+          p.thumb__description В интернете есть масса статей про крпитовалюту, но пока практически никто не пишет, как зарабатывать с помощью этого инструмента.
       .col-md-4
-        .economyCollapse
-          h3.economyCollapse__header Новый
+        .thumb.thumb_preview
+          .thumb__image
+            img(src='/images/thumbs/new_black.png' height='70')
+          h3.thumb__header Новый
             = ' '
             br.hidden-sm-down
             | тренд
-          p.economyCollapse__description Так всегда происходит, когда появляется новое, очень перспективное направление заработка. Сегодня о нем знают лишь единицы. А завтра заговорят десятки и даже сотни тысяч.
+          p.thumb__description Так всегда происходит, когда появляется новое, очень перспективное направление заработка. Сегодня о нем знают лишь единицы. А завтра заговорят десятки и даже сотни тысяч.
       .col-md-4
-        .economyCollapse
-          h3.economyCollapse__header Мало опытных
+        .thumb.thumb_preview
+          .thumb__image
+            img(src='/images/thumbs/users_black.png' height='70')
+          h3.thumb__header Мало опытных
             = ' '
             br.hidden-sm-down
             | специалистов
-          p.economyCollapse__description В Рунете еще сравнительно немного людей, которые хорошо зарабатывают на криптовалюте. И они пока не спешат делиться знаниями.
-            = ' '
-            br.hidden-sm-down
-            | Но, дорогие вещи теряют в цене сразу после покупки.
+          p.thumb__description В Рунете еще сравнительно немного людей, которые хорошо зарабатывают на криптовалюте. И они пока не спешат делиться знаниями.
+
+    .padding_top.text_center
+      button.button.button_lg(data-remodal-target='mailerlite') Посмотреть первый урок
 
     .padding_top
       hr
