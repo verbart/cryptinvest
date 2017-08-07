@@ -1,4 +1,4 @@
-# CryptInvest
+# CryptInvest.biz
 
 **Based on** https://github.com/verbart/start-site
 

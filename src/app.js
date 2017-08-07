@@ -7,7 +7,9 @@ import AOS from 'aos';
 
 toastr.options.closeButton = true;
 
-AOS.init();
+AOS.init({
+  disable: 'mobile'
+});
 
 $('[data-remodal-id]').remodal({
   hashTracking: false
