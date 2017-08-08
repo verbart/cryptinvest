@@ -24,14 +24,13 @@ $('.callbackForm').submit(function (e) {
     data: JSON.stringify(data)
   })
     .done(function () {
-      if (modal.length) {
-        modal.remodal().close();
-      }
+      if (modal.length) modal.remodal().close();
+
       toastr.success('Ваша заявка отправлена!');
       form.trigger('reset');
 
       if (location.href.indexOf(location.origin + '/ico') !== -1) {
-        fileDownload(location.origin+'/cryptinvest.biz_ico.pdf', 'cryptinvest.biz_ico.pdf');
+        fileDownload(location.origin+'/cryptinvest_ico.pdf', 'cryptinvest_ico.pdf');
       }
 
       // switch (form.attr('id')) {
