@@ -5,30 +5,31 @@ section.hero(id='main')
     .row
       .col-lg-7(data-aos='fade-right')
         .padding_bottom.hidden-md-down
-        h3.hero__header.hero__header_3 Обучение составлено по просьбам #[span.text_highlight реальных] инвесторов
-        h1.hero__header.hero__header_1 Бесплатный курс #[b для начинающих] по инвестициям в криптовалюту
-        h2.hero__header.hero__header_2 Разработан профессионалами, к мнению которых прислушиваются федеральные СМИ
+        h3.hero__header.hero__header_3 Инвестиции в криптовалюту #[span.text_highlight на международных] биржах
+        h1.hero__header.hero__header_1 Инвестируйте #[b правильно] и приумножайте Ваш капитал в любое время!
+        h2.hero__header.hero__header_2 Вкладывайте деньги в криптовалюту, и получайте прибыль
       .col-lg-5.hidden-md-down(data-aos='fade-left')
         .row
           .col-9.offset-3
-            img(src='/images/photo-1.jpg' style='max-height: 350px')
+            img(src='/images/photo-1.jpg')
 
-    h3.hero__header.hero__header_3(data-aos='fade-up') Бесплатно до конца месяца, потом 10000 рублей
+    .row(data-aos='fade-up')
+      .col-lg-10
+        h3.hero__header.hero__header_3 Заполните форму и узнайте, что делать с криптовалютой, чтобы Ваши деньги не лежали, а зарабатывали для Вас.
 
-    #mlb2-5553273.ml-subscribe-form.ml-subscribe-form-5553273
-      form.row.padding_top_half.ml-block-form(
-        action='//app.mailerlite.com/webforms/submit/k5y1y0'
-        data-id='488069'
-        data-code='k5y1y0'
-        method='POST'
-        target='_blank'
-      )
-        input(type='hidden', name='ml-submit', value='1')
+      .col-12
+        form.row.form.callbackForm.padding_top_half
+          input(type='hidden' name='title' value='Запрос на консультацию с первого экрана')
 
-        .col-sm-8.col-md-9.col-lg-7.col-xl-6.offset-sm-2.offset-md-0
-          .row
-            .col-md-6
-              .form__group.form__group_lg.margin_bottom_half.form-group.ml-field-email.ml-validate-required.ml-validate-email
-                input.form__input.form-control(type='email' name='fields[email]' required placeholder='E-mail')
-            .col-md-6
-              button.button.button_block.button_lg Получить первый урок
+          .col-md-8.offset-md-2.col-lg-12.offset-lg-0
+            .row
+              .col-lg-4.col-xl-3
+                .form__group.form__group_lg.margin_bottom_half
+                  input.form__input(name='name' required placeholder='Имя')
+
+              .col-lg-4.col-xl-3
+                .form__group.form__group_lg.margin_bottom_half
+                  input.form__input(name='phone' required placeholder='Телефон')
+
+              .col-lg-4.col-xl-3
+                button.button.button_block.button_lg Получить консультацию

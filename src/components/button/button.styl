@@ -2,8 +2,10 @@
   position relative
   top 0
   display inline-flex
+  align-items center
+  justify-content center
   min-height 2rem
-  padding 0 1rem
+  padding .5rem 1rem
   border 0
   background color_red
   color white
@@ -11,19 +13,20 @@
   text-align center
   cursor pointer
   text-decoration none
-  //border-radius 2px
   transition .2s
   &:hover
     background #c81e1e
   &_block
     width 100%
   &_lg
-    line-height 2.5rem
-    padding 0 1.4rem
+    min-height 2.5rem
+    padding-left 1.4rem
+    padding-right 1.4rem
     font-size 1.15rem
   &_xl
-    line-height 2.75rem
-    padding 0 2.5rem
+    min-height 2.75rem
+    padding-left 2.5rem
+    padding-right 2.5rem
     font-size 1.35rem
   &_long
     min-width 180px

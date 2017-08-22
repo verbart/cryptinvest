@@ -1,0 +1,14 @@
+extends ../../layouts/default
+
+block prepend head
+  prepend head
+  - var title = 'CryptInvest.biz — Бесплатный курс для начинающих по инвестициям в криптовалюту';
+  - var og_image = 'http://cryptinvest.biz/images/preview.png';
+
+block content
+  .page_main
+    include ./hero/hero
+
+    include ./sections/sections
+
+    include ../../components/modals/modals
