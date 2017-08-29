@@ -32,3 +32,4 @@ import './components/videos/videos';
 import './assets/scripts/file-download';
 import './assets/scripts/form';
 import './assets/scripts/mailerlite';
+import './pages/lessons/lesson/lesson';
