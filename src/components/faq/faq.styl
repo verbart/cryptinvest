@@ -1,17 +1,19 @@
 .faq
-  + .faq
-    margin-top 25px
+  &__item
+    & + &
+      margin-top 20px
   &__header
     position relative
-    padding-bottom 10px
+    padding-top 0
+    padding-bottom 0
     padding-left 25px
-    font-weight 700
-    font-size 1.15rem
+    font-weight 500
+    font-size 1.25rem
     &:before
       content ''
       position absolute
       left 0
-      top .5rem
+      top .2rem
       display block
       width 15px
       height @width
@@ -20,5 +22,25 @@
       border-top 3px solid color_red
       background none
       border-radius 0
+      transition .2s
   &__description
     margin 0
+    padding-top 10px
+  &_interactive
+    .faq
+      &__description
+        height 0
+        padding-top 0
+        opacity 0
+        transition .2s
+      &__item
+        cursor pointer
+        &_active
+          .faq__header
+            &:before
+              top .1rem
+              transform rotate(135deg)
+          .faq__description
+            height auto
+            padding-top 10px
+            opacity 1

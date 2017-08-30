@@ -1,18 +1,35 @@
-section.padding_top_half.padding_bottom(id='about')
+section.padding_top_half(id='why')
   .container
     .sectionHeader(data-aos='fade-up')
-      h2.sectionHeader__caption «CryptInvest» — надежный партнер по инвестициям
+      h2.sectionHeader__caption Мы вкладываем в перспективные стартапы,
         = ' '
-        br.hidden-sm-down
-        | в Биткоин и другие валюты
+        br.hidden-md-down
+        | тщательно отбирая их
 
     .row
-      .col-md-7
-        ul.list.list_arrow
-          li(data-aos='fade-left') #[b Вам помогают трейдеры-профессионалы] — они знают рынок изнутри и обладают уникальным практическим опытом успешных инвестиций;
-          li(data-aos='fade-left') #[b От Вашего заработка зависит наша прибыль] — поэтому мы заинтересованы в максимально разумном профите по сделкам с Вашим капиталом;
-          li(data-aos='fade-left') #[b Скрытые платежи и комиссии отсутствуют] — Вы отдаете фиксированный процент от прибыли по прозрачной схеме;
-          li(data-aos='fade-left') #[b Вы понимаете что происходит] — Вашим инвестиционным портфелем управляют открыто и держат Вас в курсе происходящего;
-          li(data-aos='fade-left') #[b Вы не зависите от рубля и даже от доллара] — прибыль начисляется от биткоина, самой надежной международной криптовалюты, названной валютой будущего;
-      .col-md-5.text_center
-        img(src='/images/photo-3.jpg' style='max-height: 400px')
+      .col-md-4
+        .thumb.thumb_preview
+          .thumb__image
+            img(src='/images/thumbs/star.png' height='70')
+          h3.thumb__header Экспертность
+          p.thumb__description Наши специалисты имеют опыт успешного инвестирования в ICO и знают критерии доходного проекта
+
+      .col-md-4
+        .thumb.thumb_preview
+          .thumb__image
+            img(src='/images/thumbs/chart.png' height='70')
+          h3.thumb__header Высокая доходность
+          p.thumb__description Blockchain-рынок с новыми типами бизнес-моделей растет быстрее, чем все остальные
+
+      .col-md-4
+        .thumb.thumb_preview
+          .thumb__image
+            img(src='/images/thumbs/diversification.png' height='70')
+          h3.thumb__header Диверсификация
+          p.thumb__description Фонд имеет диверсифицированный портфель активов, минимизируя риск одиночного отказа
+
+    .padding_top.text_center
+      button.button.button_lg(data-remodal-target='mailerlite') Посмотреть первый урок
+
+    .padding_top
+      hr

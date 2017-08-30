@@ -26,6 +26,7 @@ import './assets/scripts/chatra'
 // Plugins end
 
 import './components/main-header/main-header';
+import './components/faq/faq';
 import './components/navbar/navbar';
 import './components/testimonials/testimonials';
 import './components/videos/videos';
