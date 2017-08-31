@@ -13,8 +13,8 @@ const gutil = require('gulp-util');
 const pug = require('gulp-pug');
 const spritesmith = require('gulp.spritesmith');
 const tinypng = require('gulp-tinypng-nokey');
+const imagemin = require('gulp-imagemin');
 const webpack = require('webpack');
-const changed = require('gulp-changed');
 const svgSymbols = require('gulp-svg-symbols');
 const svgmin = require('gulp-svgmin');
 const rev = require('gulp-rev');
@@ -86,7 +86,9 @@ gulp.task('svgSymbols', function () {
 
 gulp.task('images', function () {
   return gulp.src('./src/assets/images/**/*.*')
-    .pipe(gulpIf(!isDevelopment, gulpIf(['*.{png,jpg,jpeg}'], tinypng())))
+    .pipe(gulpIf(!isDevelopment, imagemin({
+      verbose: true
+    })))
     .pipe(gulp.dest('./public/images'));
 });
 

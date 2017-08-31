@@ -1,7 +1,5 @@
 import $ from 'jquery';
 
-const urlParams = new URLSearchParams(window.location.search);
-const lessonID = urlParams.get('lesson');
 
 const lessons = [
   {
@@ -19,36 +17,47 @@ const lessons = [
   }
 ];
 
-const lessonIndex = lessons.findIndex(lesson => lesson.id == lessonID);
+const urlParams = new URLSearchParams(window.location.search);
+const startLessonID = urlParams.get('lesson');
+const startLessonIndex = lessons.findIndex(lesson => lesson.id === startLessonID);
+const lessonFrame = $('#lessonFrame iframe');
+const warnMessage = $('#warnMessage');
 
-const lessonFrame = $('#lessonFrame');
-const lessonsList = $('#lessonsList');
 const Lesson = ({id, title, description, url}) => `
   <div class="col-6 margin_bottom_half">
-    <a class="lesson" href="${url}" data-lesson-id="${id}">
+    <div class="lesson" data-lesson-id="${id}">
       <h3 class="lesson__title">${title}</h3>
       <p class="lesson__description">${description}</p>
-    </a>
+    </div>
   </div>
 `;
 
-$('.lesson').click(e => {
-  e.preventDefault();
-
-  const iframe = lessonFrame.find('iframe');
-  const lessonID = $(e.target).closest('[data-lesson-id]').data('lesson-id');
-  const link = `http://www.youtube.com/embed/${lessonID}?enablejsapi=1&controls=0`;
-
-  urlParams.set('lesson', lessonID);
-  window.history.replaceState({}, '', `${location.pathname}?${urlParams}`);
-
-  if (iframe.attr('src') !== link) {
-    iframe.attr('src', link);
-    // setTimeout(() => '', 500);
-  } else {
-  }
-});
-
+const lessonsList = $('#lessonsList');
 lessonsList.html(lessons.map(Lesson).join(''));
 
-console.log(lessonID, lessonIndex);
+const setVideoLink = lessonID => {
+  const link = `http://www.youtube.com/embed/${lessonID}?enablejsapi=1&controls=0`;
+  const lessonIndex = lessons.findIndex(lesson => lesson.id === lessonID);
+
+  if (startLessonIndex >= lessonIndex) {
+    warnMessage.hide();
+    lessonFrame.show();
+
+    if (lessonFrame.attr('src') !== link) {
+      lessonFrame.attr('src', link);
+      urlParams.set('lesson', lessonID);
+      window.history.replaceState({}, '', `${location.pathname}?${urlParams}`);
+    }
+  } else {
+    warnMessage.show();
+    lessonFrame.hide();
+  }
+};
+
+$('.lesson').click(e => {
+  const lessonID = $(e.target).closest('[data-lesson-id]').data('lesson-id');
+
+  setVideoLink(lessonID);
+});
+
+setVideoLink(startLessonID);
