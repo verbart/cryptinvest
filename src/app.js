@@ -33,4 +33,4 @@ import './components/videos/videos';
 import './assets/scripts/file-download';
 import './assets/scripts/form';
 import './assets/scripts/mailerlite';
-import './pages/lessons/lesson/lesson';
+if (location.pathname.indexOf('/lessons') !== -1) require('./pages/lessons/lesson/lesson');

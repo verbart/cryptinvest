@@ -18,7 +18,10 @@ const lessons = [
 ];
 
 const urlParams = new URLSearchParams(window.location.search);
-const startLessonID = urlParams.get('lesson');
+const lessonIDParam = urlParams.get('lesson');
+const wantedLesson = lessons.find(lesson => lesson.id === lessonIDParam);
+const startLessonID = wantedLesson && wantedLesson.id || lessons[0].id;
+console.log(urlParams.get('lesson'), lessons[0].id, startLessonID);
 const startLessonIndex = lessons.findIndex(lesson => lesson.id === startLessonID);
 const lessonFrame = $('#lessonFrame iframe');
 const warnMessage = $('#warnMessage');
@@ -42,6 +45,10 @@ const setVideoLink = lessonID => {
   if (startLessonIndex >= lessonIndex) {
     warnMessage.hide();
     lessonFrame.show();
+
+    $('.homework_active').removeClass('homework_active');
+    $(`.homework[data-lesson-id=${lessonID}]`).addClass('homework_active');
+
 
     if (lessonFrame.attr('src') !== link) {
       lessonFrame.attr('src', link);
