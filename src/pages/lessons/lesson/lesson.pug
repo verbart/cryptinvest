@@ -45,3 +45,29 @@
       li Android -
         = ' '
         a(href='https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio') https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio
+
+  .row.comments
+    .padding_vertical
+      h2 Напишите в коментариях какие появились вопросы. Если Вам было полезно это видео, ставьте лайк и поделитесь им в соц. сетях с друзьями!
+
+    .col-md-6
+      #fb-root
+      script.
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.10&appId=277245806110382";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+      .fb-comments(data-href="http://cryptinvest.biz/" data-numposts="10")
+
+    .col-md-6
+      script(src="//vk.com/js/api/openapi.js?146")
+      script.
+        VK.init({apiId: 6174703, onlyWidgets: true});
+
+      #vk_comments
+      script.
+        VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
