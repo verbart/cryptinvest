@@ -15,7 +15,7 @@ $('.callbackForm').submit(function (e) {
 
   const modal = form.closest('[data-remodal-id]');
 
-  data.site = 'crypto-invest.biz.bitrix24.ru';
+  data.site = 'crypto-invest.bitrix24.ru';
   data.source = location.search;
 
   $.ajax({
