@@ -1,6 +1,11 @@
-a.logo(href='/')
-  .logo__image
-    img(src='/images/logo.png')
-  h1.logo__text
-    b Crypt
-    | Invest.biz
+mixin logo(data)
+  - data = data || {};
+
+  a.logo(class=attributes.class href='/')
+    .logo__image
+      img(src='/images/logo.png')
+    .logo__text
+      h1.logo__title
+        b Crypt
+        | Invest.biz
+      p.logo__description=data.description

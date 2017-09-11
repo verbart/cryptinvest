@@ -1,9 +1,11 @@
 include /src/components/icon/icon
+include /src/components/logo/logo
+
 
 header.mainHeader
   .container.mainHeader__container
     .mainHeader__logo
-      include ../../../components/logo/logo
+      +logo()
 
     .mainHeader__getAdvice
       button.button(data-remodal-target='callback') Получить консультацию
