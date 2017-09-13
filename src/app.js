@@ -22,7 +22,7 @@ $(document).on('closed', '.remodal', function (e) {
 // Plugins start
 import './assets/scripts/yandex-metrika'
 import './assets/scripts/google-analytics'
-import './assets/scripts/chatra'
+import './assets/scripts/jivosite'
 // Plugins end
 
 import './components/main-header/main-header';
